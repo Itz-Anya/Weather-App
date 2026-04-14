@@ -1,7 +1,7 @@
 # Weather Web
 
 <p align="center">
-  <img src="public/a.png" width="300">
+  <img src="public/a.png" width="400">
 </p>
 
 A modern, responsive weather application built with React, TypeScript, and Tailwind CSS. This project serves as a robust boilerplate for building weather-related applications with a focus on performance, aesthetics, and user experience.
