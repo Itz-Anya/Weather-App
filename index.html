@@ -50,6 +50,32 @@
     <meta name="msapplication-TileColor" content="#4A90D9" />
     <meta name="msapplication-TileImage" content="https://weather-web-anya.vercel.app/a.png" />
 
+    <!-- PWA Manifest (enables Chrome "Install App" prompt) -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Weather Web Platform — Smart Forecast by Anya",
+      "url": "https://weather-web-anya.vercel.app/",
+      "description": "Modern, fast weather app delivering real-time forecasts, hourly updates, and daily insights.",
+      "applicationCategory": "WeatherApplication",
+      "operatingSystem": "Any",
+      "author": {
+        "@type": "Person",
+        "name": "Anya"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "screenshot": "https://weather-web-anya.vercel.app/a.png"
+    }
+    </script>
+
   </head>
 
   <body>
