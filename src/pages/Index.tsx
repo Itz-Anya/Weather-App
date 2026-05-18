@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import PWAInstallButton from "@/components/PWAInstallButton";
 import { motion } from "framer-motion";
 import { MapPin, AlertTriangle, RefreshCw, Navigation, Sun, Moon, Star, StarOff, Thermometer, Wind } from "lucide-react";
 import { fetchLocation, fetchWeather } from "@/lib/weather";
@@ -105,13 +106,16 @@ const Index = () => {
               {speedUnit === "kmh" ? "km/h" : "mph"}
             </button>
           </div>
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-full bg-[hsl(var(--glass-bg))] border border-[hsl(var(--glass-border))] backdrop-blur-lg hover:bg-primary/10 transition-colors"
-            title="Toggle theme"
-          >
-            {theme === "light" ? <Moon className="w-4 h-4 text-foreground" /> : <Sun className="w-4 h-4 text-foreground" />}
-          </button>
+          <div className="flex items-center gap-2">
+            <PWAInstallButton />
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-full bg-[hsl(var(--glass-bg))] border border-[hsl(var(--glass-border))] backdrop-blur-lg hover:bg-primary/10 transition-colors"
+              title="Toggle theme"
+            >
+              {theme === "light" ? <Moon className="w-4 h-4 text-foreground" /> : <Sun className="w-4 h-4 text-foreground" />}
+            </button>
+          </div>
         </div>
 
         {/* Search Bar */}
