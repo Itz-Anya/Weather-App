@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 210 30% 96%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 210 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 25% 92%;
+    --secondary-foreground: 220 20% 25%;
+
+    --muted: 210 20% 94%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 200 50% 88%;
+    --accent-foreground: 220 20% 20%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 210 60% 55%;
+
+    --radius: 1rem;
+
+    --glass-bg: 0 0% 100% / 0.55;
+    --glass-border: 0 0% 100% / 0.3;
+    --glass-shadow: 210 60% 55% / 0.08;
+    --gradient-sky: linear-gradient(135deg, hsl(200 70% 92%), hsl(210 50% 96%), hsl(220 40% 98%));
+
+  }
+
+  .dark {
+    --background: 222 40% 8%;
+    --foreground: 210 30% 92%;
+
+    --card: 222 30% 12%;
+    --card-foreground: 210 30% 92%;
+
+    --popover: 222 30% 12%;
+    --popover-foreground: 210 30% 92%;
+
+    --primary: 210 60% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 210 30% 92%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 215 15% 60%;
+
+    --accent: 220 25% 18%;
+    --accent-foreground: 210 30% 92%;
+
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 210 60% 55%;
+
+    --glass-bg: 220 30% 15% / 0.6;
+    --glass-border: 220 20% 30% / 0.3;
+    --glass-shadow: 210 60% 30% / 0.15;
+    --gradient-sky: linear-gradient(135deg, hsl(220 40% 12%), hsl(225 35% 15%), hsl(230 30% 18%));
+
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Weather Animations */
+.weather-rain {
+  position: absolute;
+  top: -10px;
+  width: 2px;
+  height: 15px;
+  background: linear-gradient(transparent, hsl(var(--primary) / 0.4));
+  border-radius: 0 0 2px 2px;
+  animation: rainfall linear infinite;
+}
+
+.weather-snow {
+  position: absolute;
+  top: -10px;
+  width: 6px;
+  height: 6px;
+  background: hsl(var(--foreground) / 0.15);
+  border-radius: 50%;
+  animation: snowfall linear infinite;
+}
+
+.weather-lightning {
+  position: fixed;
+  inset: 0;
+  background: hsl(var(--primary-foreground) / 0.03);
+  animation: lightning 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes rainfall {
+  0% { transform: translateY(-10px); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes snowfall {
+  0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes lightning {
+  0%, 90%, 100% { opacity: 0; }
+  92% { opacity: 1; }
+  94% { opacity: 0; }
+  96% { opacity: 0.7; }
+  98% { opacity: 0; }
+}

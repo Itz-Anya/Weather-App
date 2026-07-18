@@ -1,0 +1,45 @@
+{
+  "name": "Weather Web Platform — Smart Forecast by Anya",
+  "short_name": "Weather App",
+  "description": "Real-time weather forecasts, hourly updates, daily insights, and a smooth user experience.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#4A90D9",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["weather", "utilities"],
+  "icons": [
+    {
+      "src": "/a.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/a.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Weather App Home Screen"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Check Weather",
+      "short_name": "Weather",
+      "description": "Open the weather app",
+      "url": "/",
+      "icons": [{ "src": "/a.png", "sizes": "192x192" }]
+    }
+  ]
+}
