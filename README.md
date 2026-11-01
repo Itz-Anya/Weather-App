@@ -67,7 +67,11 @@ A modern, responsive weather application built with React, TypeScript, and Tailw
 
 ## Credits
 
-Created with ❤️ by Anya & Murali . Join us at [Sylveon Lab](https://t.me/Sylveonlab).
+
+<p align="center">
+  <img src="https://random-images-anya.vercel.app/am" alt="Random Image" />
+</p>
+
 
 ## License
 
